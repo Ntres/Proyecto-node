@@ -46,7 +46,6 @@ router.get('/edit/:id', async(req, res) => {
 });
 
 router.put('/edit/:id', async(req, res, next) => {
-    console.log('entro a editar');
     try {
         const id = req.params.id;
 
@@ -65,7 +64,6 @@ router.put('/edit/:id', async(req, res, next) => {
 router.delete('/:id', async(req, res, next) => {
     try {
         const id = req.params;
-        console.log('borramos esta id -->', id.id);
 
         const deleted = await Client.findByIdAndDelete(id.id);
         if (deleted) {

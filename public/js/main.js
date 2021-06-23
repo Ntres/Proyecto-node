@@ -5,7 +5,6 @@ let logoUrl = '';
 
 updateClient = async(id) => {
     event.preventDefault();
-    console.log('id --> ', id);
 
     const companyName = form$$.querySelector('[name="companyName"]').value;
     const name = form$$.querySelector('[name="name"]').value;
@@ -28,8 +27,6 @@ updateClient = async(id) => {
         logoCompany: logoUrl,
         cif: cif
     };
-
-    console.log('client antes de enviarlo --> ', client);
 
     const res = await fetch('http://localhost:3000/clients/edit/' + id, {
         method: 'PUT',
@@ -55,9 +52,7 @@ const uploadToCloudinary = async(logoCompany) => {
             body: fileData
         }).then(response => response.json())
         .then(data => {
-            console.log('Success:', data)
             logoUrl = data.secure_url;
-            console.log('logourl --> ', logoUrl);
         })
         .catch(err => console.error('Error:', err));
 }

@@ -61,7 +61,6 @@ router.post('/add-incidence', [upload.single('image'), uploadToCloudinary], asyn
             estimatedEnd,
             asignedTo
         });
-        console.log('newIncidence --> ', newIncidence);
 
         await newIncidence.save();
 
