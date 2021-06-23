@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/cards.css" />
+    <title>{{title}}</title>
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <a href="/">Dashboard</a>
+            <a class="active" href="#">Incidencias</a>
+            <a href="/clients">Clientes</a>
+            <div class="logout">
+                <form action="/auth/logout" method="POST">
+                <input type="submit" value="Logout" />
+                </form>
+            </div>
+        </div>
+    </header>
+    <div>
+        <h1>{{title}}</h1>
+        <a href="/incidences/add-incidence">Agregar Incidencia</a>
+    </div>
+
+    <div class="container">
+        {{#each incidences}}
+        <div class="card">
+            <h2>Cliente: {{client}}</h2>
+            <h3>Asignado: {{asignedTo}}</h3>
+            <div class="title title--epic">{{date}}</div>
+            <div class="desc">Tipo de problema: {{problemType}}</div>
+            <div class="desc">Descripción del problema: {{problemDesc}}</div>
+            <div class="desc">Material: {{leaveMaterial}} - {{leaveMaterialDesc}}</div>
+            <div class="desc">Fecha estimada: {{estimatedEnd}} -Terminado:{{finished}}</div>
+            <img class="img-logo" src="{{image}}" alt="{{client}}">
+            <div class="actions">
+                <a href="/incidences/edit/{{id}}">
+                    <button class="actions__trade">editar &nbsp;
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                </a>
+                <a onclick="deleteIncidence('{{_id}}')">
+                    <button class="actions__cancel">borrar &nbsp;
+                        <i class="fas fa-times"></i>
+                    </button>
+                </a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</body>
+</html>

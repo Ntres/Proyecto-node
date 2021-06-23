@@ -1,0 +1,108 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 1rem;
+    width: 300px;
+    min-height: 400px;
+    padding: 1rem 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 12px 32px 4px rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.img-logo {
+    max-height: 150px;
+    max-width: 150px;
+    margin: 10px 0px;
+}
+
+.card .title {
+    color: white;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.card .title--epic {
+    background-color: #8c14fc;
+}
+
+.card .title--epic:hover {
+    box-shadow: 0 0 12px rgba(140, 20, 252, .8);
+}
+
+.card .desc {
+    text-align: center;
+    margin: 2px;
+}
+
+.card .actions {
+    width: 100%;
+    display: grid;
+    margin: 5px 0px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card .actions button {
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    outline: 0;
+    transition: background-color 0.4s, color 0.4s, transform 0.1s;
+}
+
+.card .actions button:hover {
+    color: white;
+    box-shadow: 0 0 24px rgba(0, 0, 0, .2);
+}
+
+.card .actions button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 16px rgba(0, 0, 0, .3);
+}
+
+.card .actions__trade:hover {
+    background-color: #3498db;
+}
+
+.card .actions__cancel:hover {
+    background-color: #c0392b;
+}
+
+p {
+    margin-top: 1rem;
+    color: #484848;
+}
+
+
+/* a:link,
+a:visited {
+    text-decoration: none;
+    color: #2574a9;
+} */
+
+
+/* .active {
+    background-color: #00b16a;
+} */
+
+button::-moz-focus-inner {
+    border: 0;
+}

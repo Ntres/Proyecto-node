@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/cards.css" />
+    <link rel="stylesheet" href="/styles/add-client.css">
+    <title>Añadir Cliente</title>
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <a href="/">Dashboard</a>
+            <a href="/incidences">Incidencias</a>
+            <a class="active" href="/clients">Clientes</a>
+            <div class="logout">
+                <form action="/auth/logout" method="POST">
+                <input type="submit" value="Logout" />
+                </form>
+            </div>
+        </div>
+    </header>
+    <content>
+        <div class="login-box">
+        <h2>Crea un nuevo cliente</h2>
+            <form action="/clients/add-client" method="POST" enctype="multipart/form-data">
+                <div class="user-box">
+                    <input type="text" name="companyName" required="">
+                    <label>Nombre de la empresa</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="name" required="">
+                    <label>Nombre del contacto</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="lastName" required="">
+                    <label>Apellidos del contacto</label>
+                </div>
+                <div class="user-box">
+                    <input type="email" name="email" required="">
+                    <label>Email de contacto</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="phone" required="">
+                    <label>Teléfono del contacto</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="address" required="">
+                    <label>Dirección del contacto</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="cif" required="">
+                    <label>CIF de la empresa</label>
+                </div>
+                <div class="user-box">
+                    {{!-- <input type="text" name="logoCompany" required=""> --}}
+                    <input name="logoCompany" type="file" required>
+                </div>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </content>
+
+</body>
+</html>

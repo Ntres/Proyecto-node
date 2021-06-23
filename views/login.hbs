@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Login</title>
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <a href="/">Inicio</a>
+            <a href="/auth/register">Registro</a>
+        </div>
+    </header>
+
+    <h1>Login</h1>
+
+    <form action="/auth/login" method="POST">
+
+        <label>
+            <p>Email</p>
+            <input name="email" type="email" required placeholder="email">
+        </label>
+
+        <label>
+            <p>password</p>
+            <input name="password" type="password" required placeholder="password">
+        </label>
+
+        <button type="submit">Login</button>
+
+    </form>
+    {{#if error}}
+        <div style="color: red">{{error}}</div>
+    {{/if}}
+</body>
+</html>

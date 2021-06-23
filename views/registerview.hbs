@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>{{title}}</title>
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <a href="/">Inicio</a>
+            <a href="/auth/login">Login</a>
+        </div>
+    </header>
+    <h1>Registrar/Login</h1>
+
+        <form action="/auth/register" method="POST">
+
+        <label>
+            <p>Email</p>
+            <input name="email" type="email" required placeholder="email">
+        </label>
+
+        <label>
+            <p>username</p>
+            <input name="username" type="text" required placeholder="username">
+        </label>
+
+        <label>
+            <p>password</p>
+            <input name="password" type="password" required placeholder="password">
+        </label>
+
+        <label>
+            <p>name</p>
+            <input name="name" type="text" required placeholder="name">
+        </label>
+
+        <label>
+            <p>lastName</p>
+            <input name="lastName" type="text" required placeholder="lastName">
+        </label>
+
+        <div>
+            <button type="submit">Registrarme</button>
+        </div>
+
+        {{#if error}}
+            <div style="color: red">{{error}}</div>
+        {{/if}}
+    </form>
+</body>
+</html>

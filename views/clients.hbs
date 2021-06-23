@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/cards.css" />
+    <script src="/js/main.js" defer></script>
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <header>
+        <div class="topnav">
+            <a href="/">Dashboard</a>
+            <a href="/incidences">Incidencias</a>
+            <a class="active" href="#">Clientes</a>
+            <div class="logout">
+                <form action="/auth/logout" method="POST">
+                <input type="submit" value="Logout" />
+                </form>
+            </div>
+        </div>
+    </header>
+    <div>
+        <h1>{{title}}</h1>
+        <button onclick="addClient()" class="addClient">Agregar Cliente</button>
+        <a href="/clients/add-client">Agregar Cliente</a>
+    </div>
+
+    <div class="container">
+        {{#each clients}}
+        <div class="card">
+            <h2>{{companyName}}</h2>
+            <h3>{{name}} {{lastName}}</h3>
+            <div class="title title--epic">Programmer</div>
+            <div class="desc">{{email}}</div>
+            <div class="desc">+{{phone}}</div>
+            <div class="desc">{{address}}</div>
+            <div class="desc">{{cif}}</div>
+            <img class="img-logo" src="{{logoCompany}}" alt="logo empresa">
+            <div class="actions">
+                <a href="/clients/edit/{{id}}">
+                    <button class="actions__trade">editar &nbsp;
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                </a>
+                <a onclick="deleteClient('{{_id}}')">
+                    <button class="actions__cancel">borrar &nbsp;
+                        <i class="fas fa-times"></i>
+                    </button>
+                </a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</body>
+
+</html>
